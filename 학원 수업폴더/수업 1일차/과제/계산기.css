@@ -1,0 +1,54 @@
+#top {
+  align-content: center;
+  border: 1px solid black;
+  background-color: aliceblue;
+  margin-left: 50px;
+  width: 380px;
+}
+
+#calculator th {
+  width: 55px;
+  border: 1px solid black;
+  background-color: antiquewhite;
+  font-size: 90px;
+}
+
+#cul {
+  width: 70px;
+  border: 1px solid black;
+  background-color: aqua;
+  width: 380px;
+  height: 100px;
+  font-size: 35px;
+  text-wrap: wrap;
+}
+
+#numlist {
+  width: 380px;
+}
+
+#numlist th {
+  font-size: 90px;
+  border: 1px solid black;
+  margin-left: 20px;
+}
+
+#numlist.one .one,
+#numlist.two .two,
+#numlist.three .three,
+#numlist.four .four,
+#numlist.five .five,
+#numlist.six .six,
+#numlist.seven .seven,
+#numlist.eight .eight,
+#numlist.nine .nine,
+#numlist.zero .zero {
+  border: 1px solid red;
+}
+
+#calculator.plus .plus,
+#calculator.minus .minus,
+#calculator.multi .multi,
+#calculator.divide .divide {
+  border: 1px solid red;
+}

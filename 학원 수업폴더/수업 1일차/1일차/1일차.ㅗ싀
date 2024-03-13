@@ -1,0 +1,7 @@
+array 배열 순서0 이름x--> 순서가 존재하여 반복문에서 사용 사능
+object 객체 순서 x 이름 o
+fungtion 함수 참조 변수
+
+
+call stach   ------ memory heap
+arr,obj      참조-->       값이 저장

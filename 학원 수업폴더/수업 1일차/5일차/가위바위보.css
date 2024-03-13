@@ -1,0 +1,95 @@
+* {
+  box-sizing: border-box;
+}
+
+#src {
+  /* display:none */
+}
+#src div .scissors,
+#src div .rock,
+#src div .paper {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  border: 3px solid black;
+}
+
+#src .scissors .scissors,
+#src .rock .rock,
+#src .paper .paper {
+  border: 3px dotted red;
+  border-radius: 100%;
+  padding: 16px;
+}
+
+@keyframes selecting1 {
+  0% {
+    border: 3px solid red;
+  }
+  33% {
+    border: 3px solid red;
+  }
+  33.1% {
+    border: 3px solid red;
+  }
+  66% {
+    border: 3px solid black;
+  }
+  100% {
+    border: 3px solid black;
+  }
+}
+
+#src #com-sel.auto .scissors {
+  animation: selecting1 5s linear infinite;
+}
+
+@keyframes selecting2 {
+  0% {
+    border: 3px solid red;
+  }
+  33% {
+    border: 3px solid red;
+  }
+  33.1% {
+    border: 3px solid red;
+  }
+  66% {
+    border: 3px solid black;
+  }
+  100% {
+    border: 3px solid black;
+  }
+}
+
+#src #com-sel.auto .rock {
+  animation: selecting2 5s linear infinite;
+}
+
+@keyframes selecting3 {
+  0% {
+    border: 3px solid red;
+  }
+  33% {
+    border: 3px solid red;
+  }
+  33.1% {
+    border: 3px solid red;
+  }
+  66% {
+    border: 3px solid black;
+  }
+  100% {
+    border: 3px solid black;
+  }
+}
+
+#src #com-sel.auto .paper {
+  animation: selecting3 5s linear infinite;
+}
+
+#result {
+  font-size: 80px;
+  text-align: center;
+  font-weight: 900;
+}

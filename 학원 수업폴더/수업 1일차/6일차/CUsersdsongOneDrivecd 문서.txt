@@ -1,0 +1,153 @@
+
+#24.3.6
+
+---osi 7 layer(osi 7계층)---
+7.Applicaition Layer:사용자의 입출력, 응용프로세스 관리 HTTP통신
+6.presentation Layer :송수신자의 다른 데이터 표현을 상호인식 가능하도록 변환
+5.Session Layer: :송수신자의 프로세스간 연결 관리
+4.Transport Layer: Tcp/Udp ,Soket통신
+3..Network Layer : IP주소지정
+2.Data link Layer :MAC주소 지정
+1.Physiclal Layer:전기 신호
+
+--tcp/ip4layer--(tcp/ip 4계층)---
+|Applicaition Layer|
+|presentation Layer |---->Application
+|Session Layer|
+
+|Transport Layer|---->transport
+
+|Network Layer|---->internet
+
+
+|Data link Layer |---->Network Acess
+|Physiclal Laye|
+
+--tcp/ip5layer--(tcp/ip 5계층)---
+
+|Applicaition Layer|
+|presentation Layer |---->Application
+|Session Layer|
+
+|Transport Layer|---->transport
+
+|Network Layer|---->network
+
+
+|Data link Layer |---->data link
+
+|Physical Layer|---->phisical layer
+
+tcp:전송을 보내고 받았는지 확인 안정성이 높다
+udp: 보내고 확인 하지 않음 안정성이 낮다
+
+cd--->들어감
+
+cd  ../전 경로
+
+C:\Users\dsong\OneDrive>cd 문서
+명령어
+
+C:\Users\dsong\OneDrive\문서>mkdir Web4
+
+C:\Users\dsong\OneDrive\문서>cd Web4
+
+C:\Users\dsong\OneDrive\문서\Web4>mkdir Aws
+
+C:\Users\dsong\OneDrive\문서\Web4>cd Aws
+
+C:\Users\dsong\OneDrive\문서\Web4\Aws>mkdir HTML
+
+C:\Users\dsong\OneDrive\문서\Web4\Aws>mkdir css
+
+C:\Users\dsong\OneDrive\문서\Web4\Aws>cd C:\Users\dsong\OneDrive\문서\Web4---->..\상위로 올라감
+
+C:\Users\dsong\OneDrive\문서\Web4 mkdir js
+
+
+####Remedial
+
+#24.3.7
+
+tcp-->session---->socket통신(연결이 지속) 
+                   --->http(응용단계)(연결이 지속x)(서로간의 데이터 저장x)---->websocket(ws://)
+
+ex)/(header)요청 naver.com -->목적지  (body가 비어있는 상태 값이 없음)
+    |(body) 비어있음
+
+/응답(body) <HTML>........</HTML> 문자 .. string  (데이터)                  --->객체에 담는다.Text/HTML ex) png= image/png
+|(header)목적지:naver.com 목적지(응답의 값을 준이유)
+
+
+header:(destinaition:naver.com)
+          (assign:text/html)
+          (set.cookie{})
+
+
+요청의 종류 method                                 --restful A(application)P(programming)I(interface)(통신함에 있어서 규칙)--Http 통신에서 정보를 주고받는 규칙
+GET:바디에 데이터를 넣을수 없다; 받아올수만있음 web1.0
+POST:바디를 받을수 있음 Web2.0
+PUT:수정할때 사용 ----->통째로 전부바꿈
+PATCH:수정할때사용 ------>일부수정
+DELETE:삭제
+OPTION:확인과정 -->자바스크립트에서 가능해서 옵션은 잘안씀
+
+
+post만 사용하여 {method:GET body:{...}}----->grapth QL
+
+web1.0 밭아올수만있음(정보검색)
+web2.0 받아오고(정보검색) 쓸수있음(블로그 등등)
+Web.3.0 채팅 ai vr 비트코인 등을 포함
+
+
+HTTP(Hyper Text Transfer Protocal)----> 문서를 전송하기위한 통신규약 안전확인x
+
+HTTPS(Hyper Text Transfer Protocal Secure) ----> 안전이 확인된 페이지 (APACH,NginX ->로 처리)
+
+
+curl 주소...>
+
+curl -v
+
+#24.03,08
+
+vi
+-메모장
+-아래의 현재 모드에 대해서 적혀있다,
+-'i'를 누르면 '--insert--'로 바뀌소
+입력모드
+-통상 모드시 저장, 종료 가능
+=":'를 누르면 파일의 저장|종료 등 명령어를 입력할수 있다.
+-':q':종료
+-':w':쓰기
+-'wq':쓰고 종료
+-'!': 강제 << 관리자 권한으로 실행
+-':!wq' 강제로 저장하고 종료한다,
+-':!q':강제로 종료한다<< 수정후 수정사항 날릴떄
+
+
+cd/ls -al
+
+dev:하드웨어 정보를 받아올수 있는 프로그램이 들어가있음
+
+**(~)home:사용자 각자의 기본폴더
+
+lib:라이브러리 (공통적으로 사용되는 라이브러리)
+
+media:저장공간이 존재하는 외부장치를 연결-->저장시 media폴더에 저장됨(알아서 자동으로 작동)
+
+**mnt:외부저장장치를 인식 불러옴-->우리가 명령함(수동으로 작동)
+
+boot:부트로더--->컴퓨터 부팅관련파일 들어있음
+
+etc:시스템의 설정파일들이 들어있음
+
+usr:프로그램이 설치되는 위치
+
+tmp:임시파일
+
+**var:기타파일들,(시스템 로그 등등)
+
+sudo () 관리자 권한으로 명령어 실행
+enginx 다운로드
+

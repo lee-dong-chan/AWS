@@ -1,0 +1,102 @@
+* {
+  box-sizing: border-box;
+}
+
+#src {
+  /* display: none; */
+}
+
+#src div .scissors,
+#src div .rock,
+#src div .cloth {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  border: 3px solid rgba(0, 0, 0, 0);
+  border-radius: 100%;
+  padding: 16px;
+}
+
+#src div.scissors .scissors,
+#src div.rock .rock,
+#src div.cloth .cloth {
+  border: 3px dotted red;
+}
+
+@keyframes selecting1 {
+  0% {
+    border: 3px solid red;
+  }
+  33% {
+    border: 3px solid red;
+  }
+  33.1% {
+    border: 3px solid rgba(0, 0, 0, 0);
+  }
+  66% {
+    border: 3px solid rgba(0, 0, 0, 0);
+  }
+  100% {
+    border: 3px solid rgba(0, 0, 0, 0);
+  }
+}
+
+#src #com-sel.auto .scissors {
+  animation: selecting1 5s linear infinite;
+}
+
+@keyframes selecting2 {
+  0% {
+    border: 3px solid rgba(0, 0, 0, 0);
+  }
+  33% {
+    border: 3px solid rgba(0, 0, 0, 0);
+  }
+  33.1% {
+    border: 3px solid red;
+  }
+  66% {
+    border: 3px solid red;
+  }
+  66.1% {
+    border: 3px solid rgba(0, 0, 0, 0);
+  }
+  100% {
+    border: 3px solid rgba(0, 0, 0, 0);
+  }
+}
+
+#src #com-sel.auto .rock {
+  animation: selecting2 5s linear infinite;
+}
+
+@keyframes selecting3 {
+  0% {
+    border: 3px solid rgba(0, 0, 0, 0);
+  }
+  33% {
+    border: 3px solid rgba(0, 0, 0, 0);
+  }
+  33.1% {
+    border: 3px solid rgba(0, 0, 0, 0);
+  }
+  66% {
+    border: 3px solid rgba(0, 0, 0, 0);
+  }
+  66.1% {
+    border: 3px solid red;
+  }
+  100% {
+    border: 3px solid red;
+  }
+}
+
+#src #com-sel.auto .cloth {
+  animation: selecting3 5s linear infinite;
+}
+
+#result {
+  font-size: 80px;
+  text-align: center;
+  font-weight: 900;
+}
