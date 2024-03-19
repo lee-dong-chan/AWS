@@ -20,7 +20,7 @@
 |Network Layer|---->internet
 
 
-|Data link Layer |---->Network Acess
+|Data link Layer |---->Network interface
 |Physiclal Laye|
 
 --tcp/ip5layer--(tcp/ip 5계층)---

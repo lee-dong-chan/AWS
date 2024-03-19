@@ -1,0 +1,119 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   console.log(a);
+      console.log(b);
+      console.log(c);
+      c();
+      //   console.log(d);
+      //   d();
+
+      let a = 1;
+      var b = 2;
+      function c() {}
+      let d = () => {
+        let a = 3;
+        console.log(this);
+        console.log(a);
+      };
+      d();
+
+      function e() {
+        e();
+      }
+      //   e();
+
+      const f = {
+        a: 1,
+        b: 2,
+        c: function () {
+          console.log(this);
+          const d = {
+            getThis: () => {
+              console.log(this);
+            },
+          };
+          d.getThis();
+        },
+        d: () => {
+          console.log(this);
+        },
+      };
+      f.c();
+      f.d();
+
+      // `` // 템플릿 리터럴(백틱)
+
+      class Test {
+        constructor() {}
+        a = function () {
+          console.log(this);
+        };
+        b = () => {
+          console.log(this);
+        };
+      }
+
+      const test = new Test();
+      test.a();
+      test.b();
+
+      function TestF() {
+        this.a = function () {
+          console.log(this);
+        };
+        this.b = () => {
+          console.log(this);
+        };
+      }
+      const TestFF = () => {
+        this.a = function () {
+          console.log(this);
+        };
+      };
+
+      // const funcA = () => {
+      //   console.log(this);
+      // };
+      // const funcB = () => {
+      //   funcA();
+      //   console.log(this);
+      // };
+      // funcB();
+
+      // const tempInterval = setInterval(() => {
+      //   console.log("1초 지났어");
+      // }, 1000);
+      // for (let i = 0; i < 200000; i++) {
+      //   console.log(i);
+      // }
+      //   clearInterval(tempInterval);
+
+      //   fetch("http://127.0.0.1:5500/0.Question/index.html").then((data) => {
+      //     console.log(data);
+      //   });
+      // fetch("http://127.0.0.1:5500/2.JS/jump.html")
+      //   .then((data) => {
+      //     return data.text();
+      //   })
+      //   .then((str) => {
+      //     console, log(str);
+      //   });
+      const getHTML = async () => {
+        try {
+          const data = await fetch("http://127.0.0.1:5500/2.JS/jump.html");
+          const str = await data.text();
+          console.log(str);
+        } catch (err) {
+          console.error(err);
+        }
+      };
+      getHTML;
+    </script>
+  </body>
+</html>
