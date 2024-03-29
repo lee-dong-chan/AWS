@@ -1,0 +1,15 @@
+{
+  "name": "240326",
+  "version": "1.0.0",
+  "description": "- nvm => node version manager - npm => node package manager   - prohect 개념으로 관리하기 시작한다.   - folder로 project를 나눈다. =>package.json",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

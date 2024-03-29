@@ -1,0 +1,71 @@
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>게시판</title>
+    <link rel="stylesheet" href="board.css" />
+  </head>
+  <body>
+    <div id="root">
+      <h1 class="box-center">게시판</h1>
+      <ul id="list">
+        <li class="header">
+          <ul class="row">
+            <li class="num box-center">번호</li>
+            <li class="title box-center">제목</li>
+            <li class="writer box-center">글쓴이</li>
+            <li class="createAT box-center">등록일</li>
+          </ul>
+        </li>
+        <li class="item notice">
+          <ul class="row">
+            <li class="num box-center">1</li>
+            <li class="title">오늘의 점심은?</li>
+            <li class="writer box-center">이정배</li>
+            <li class="createAT box-center">24-03-28</li>
+          </ul>
+        </li>
+        <li class="item">
+          <ul class="row">
+            <li class="num box-center">2</li>
+            <li class="title">오늘의 점심은?</li>
+            <li class="writer box-center">이정배</li>
+            <li class="createAT box-center">24-03-28</li>
+          </ul>
+        </li>
+      </ul>
+      <form action="" id="write">
+        <fieldset>
+          <legend>게시글 등록</legend>
+          <div class="input-box">
+            <label for="title">제목:</label>
+            <input type="text" id="title" />
+          </div>
+          <div class="input-box">
+            <label for="writer">글쓴이:</label>
+            <input type="text" id="writer" />
+          </div>
+          <div class="content-box">
+            <label for="content">내용:</label>
+            <textarea type="text" id="content"></textarea>
+          </div>
+          <div>
+            <button id="add-btn">등록</button>
+            <button type="reset" id="cancel-btn">취소</button>
+          </div>
+        </fieldset>
+      </form>
+      <div id="view">
+        <div class="view-header">
+          <div id="v-title">제목</div>
+          <div class="v-writer">
+            <div id="v-id">작성자</div>
+            <div id="v-creatat"></div>
+          </div>
+        </div>
+        <div id="view-content"></div>
+      </div>
+    </div>
+    <script src="board.js"></script>
+  </body>
+</html>
