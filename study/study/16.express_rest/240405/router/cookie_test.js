@@ -13,7 +13,6 @@ router.get("/", (req, res) => {
       signed: true, //쿠키를 암호화 한다(난독화)
       httpOnly: true, //http socket 통신 등은 적용되지 않는다.
     });
-    res.redirect("/");
   }
   res.send("쿠키를 확인하세요");
 });
