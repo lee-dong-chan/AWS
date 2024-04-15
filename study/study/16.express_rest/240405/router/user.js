@@ -9,6 +9,7 @@ router.post("/login", (req, res) => {
 });
 
 router.post("/regist", (req, res) => {
+  console.log(req);
   if (req.body.pw == req.body.pwr) users.push({ ...req.body, pwr: undefined });
   res.redirect("/");
 });
