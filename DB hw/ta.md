@@ -22,26 +22,29 @@
 ```
 
 ```skillcard
-+----------------------+------------------+------+-----+---------+----------------+
-| id                   | tinyint unsigned | NO   | PRI | NULL    | auto_increment |
-| cardname             | varchar(10)      | NO   |     | NULL    |                |
-| skilldamage          | tinyint          | YES  |     | NULL    |                |
-| defualtdamageincrese | tinyint          | YES  |     | NULL    |                |
-| costrecovery         | tinyint          | YES  |     | NULL    |                |
-| requirecostdecrese   | tinyint          | YES  |     | NULL    |                |
-| requirecost          | tinyint unsigned | NO   |     | NULL    |                |
-| shield               | tinyint          | YES  |     | NULL    |                |
-+----------------------+------------------+------+-----+---------+----------------+
++----------------------+------------------------+------+-----+---------+----------------+
+| Field                | Type                   | Null | Key | Default | Extra          |
++----------------------+------------------------+------+-----+---------+----------------+
+| id                   | tinyint unsigned       | NO   | PRI | NULL    | auto_increment |
+| cardname             | varchar(10)            | NO   | UNI | NULL    |                |
+| skilldamage          | tinyint                | YES  |     | NULL    |                |
+| defualtdamageincrese | tinyint                | YES  |     | NULL    |                |
+| costrecovery         | tinyint                | YES  |     | NULL    |                |
+| requirecostdecrese   | tinyint                | YES  |     | NULL    |                |
+| requirecost          | tinyint unsigned       | NO   |     | NULL    |                |
+| shield               | tinyint                | YES  |     | NULL    |                |
+| cardproperty         | enum('user','monster') | NO   |     | NULL    |                |
++----------------------+------------------------+------+-----+---------+----------------+
 ```
 
 ```decklist
-+--------------+------------------------+------+-----+---------+----------------+
-| Field        | Type                   | Null | Key | Default | Extra          |
-+--------------+------------------------+------+-----+---------+----------------+
-| id           | tinyint unsigned       | NO   | PRI | NULL    | auto_increment |
-| cardproperty | enum('user','monster') | NO   |     | NULL    |                |
-| skillcard_id | tinyint unsigned       | NO   |     | NULL    |                |
-+--------------+------------------------+------+-----+---------+----------------+
++--------------+------------------------+------+-----+---------+-------+
+| Field        | Type                   | Null | Key | Default | Extra |
++--------------+------------------------+------+-----+---------+-------+
+| id           | tinyint unsigned       | NO   |     | NULL    |       |
+| deckproperty | enum('user','monster') | YES  |     | NULL    |       |
+| skillcard_id | tinyint unsigned       | NO   |     | NULL    |       |
++--------------+------------------------+------+-----+---------+-------+
 ```
 
 ```characterlist
@@ -82,6 +85,7 @@
 | id            | tinyint unsigned | NO   | PRI | NULL    | auto_increment |
 | backgroundimg | longblob         | NO   |     | NULL    |                |
 | floorimg      | longblob         | NO   |     | NULL    |                |
+| name          | varchar(10)      | NO   | UNI | NULL    |                |
 +---------------+------------------+------+-----+---------+----------------+
 ```
 
@@ -103,4 +107,25 @@
 | stageResultHP | tinyint unsigned   | NO   |     | NULL    |       |
 | stageResult   | enum('win','lose') | NO   |     | NULL    |       |
 +---------------+--------------------+------+-----+---------+-------+
+```
+
+```talent
++-------------------------+------------------+------+-----+---------+----------------+
+| Field                   | Type             | Null | Key | Default | Extra          |
++-------------------------+------------------+------+-----+---------+----------------+
+| id                      | tinyint          | NO   | PRI | NULL    | auto_increment |
+| name                    | varchar(10)      | NO   | UNI | NULL    |                |
+| increseMaxHP            | tinyint          | YES  |     | NULL    |                |
+| increseUserDefultDamage | tinyint unsigned | YES  |     | NULL    |                |
+| increseMaxcost          | tinyint unsigned | YES  |     | NULL    |                |
++-------------------------+------------------+------+-----+---------+----------------+
+```
+
+```handheldtalent
++----------------+------------------+------+-----+---------+-------+
+| Field          | Type             | Null | Key | Default | Extra |
++----------------+------------------+------+-----+---------+-------+
+| id             | tinyint unsigned | NO   |     | NULL    |       |
+| handheldtalent | tinyint unsigned | NO   | PRI | NULL    |       |
++----------------+------------------+------+-----+---------+-------+
 ```
