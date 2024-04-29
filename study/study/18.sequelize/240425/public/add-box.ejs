@@ -1,0 +1,17 @@
+<form action="api/todo/add" method="post">
+  <fieldset>
+    <legend>Add Todo</legend>
+    <input type="text" name="content" placeholder="Todo contents">
+    <%if(list.length>0){%>
+    <select name="todoId">
+      <option value=""></option>
+      <%for(const item of list){%>
+      <option value="<%=item.id%>">
+        <%=item.content%>
+      </option>
+      <%}%>
+    </select>
+      <%}%>
+      <button>추가</button>
+  </fieldset>
+</form>

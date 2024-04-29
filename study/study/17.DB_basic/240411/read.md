@@ -16,7 +16,7 @@
 - RDBMS
   - 실행되는 서버가 있고, 거기에 대응하는 프로그램이있다.
   - 뭔가 실행파일이 있음--> 'mysql -u root -p'<<실제로 실행되고 있즌 서버와는 다른 프로그램이다.
-    - 'service mysqk start' << mysqld.sh << demon - demon << 백그라운드에서 항상 실행되고 있는 프로그램 종류이다.
+    - 'service mysql start' << mysqld.sh << demon - demon << 백그라운드에서 항상 실행되고 있는 프로그램 종류이다.
 
 ### mysql
 
@@ -79,7 +79,7 @@ drop database AWS_TEST;
 ## 사용자 권한 설정
 
 ```sql
-grant grant all privileges on AWS_TEST.*to aws; 모든권한
+grant all privileges on AWS_TEST.*to aws; 모든권한
 -- grant select on AWS_TEST.*to aws; 선택권한
 -- grant insert on AWS_TEST.*to aws; 입력권한
 ```
@@ -195,7 +195,7 @@ CREARE TABLE test(
 ### ENUM
 
 - enumeration : 열거형
-- ENUM('data1','data2'ES
+- ENUM('data1','data2')
 - data = 'data1'||'data2'
 - 미리 설정한 값만을 하나만 넣을 수 있다.
 
@@ -216,7 +216,7 @@ creare table text(
 
 - DATE: YYYY-M-DD
 - DATETIME: YYYY-M-DD HH:MM:SS
-- IMESTAMP : number(UTC)
+- TIMESTAMP : number(UTC)
 
 ### TIME
 
