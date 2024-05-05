@@ -1,0 +1,57 @@
+body {
+  margin: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.header {
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border: 1px solid #ebeefe;
+}
+
+.header .logo {
+  color: black;
+}
+
+.header .global button {
+  background-color: white;
+  border: none;
+}
+.header .global button svg {
+  opacity: 0.5;
+}
+.body {
+  /* height: calc(100% - 10rem); */
+  flex: 1;
+  background-color: whitesmoke;
+}
+
+.footer {
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer a {
+  color: black;
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+.footer a:last-child {
+  font-weight: bold;
+}
+
+.modal {
+  position: fixed;
+  background-color: rgb(0, 0, 0, 0.5);
+}

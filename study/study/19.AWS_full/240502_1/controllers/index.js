@@ -1,6 +1,8 @@
 import { Router } from "express";
+import board from "./board.js";
 
 const router = Router();
+router.use("/board", board);
 
 export default router;
 
