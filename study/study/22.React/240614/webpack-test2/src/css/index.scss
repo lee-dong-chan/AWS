@@ -1,0 +1,18 @@
+#count-btn {
+  color: blue;
+  > .count {
+    color: red;
+    &.even {
+      color: red;
+      background-color: yellow;
+    }
+    &.odd {
+      color: white;
+      background-color: black;
+    }
+    &.third {
+      color: green;
+      background-color: purple;
+    }
+  }
+}

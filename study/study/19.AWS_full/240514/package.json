@@ -1,0 +1,26 @@
+{
+  "name": "240514",
+  "version": "1.0.0",
+  "description": "- 우리가 원하는 데이터를 클리이언트(브라우저)에 저장한것   - 보안 문제 : 아무나 접근이 가능하다.   - 용량 문제 : 보통 문자열만 저장이 가능하다. - 장점:",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "session-file-store": "^1.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "test-session/**"
+    ]
+  }
+}

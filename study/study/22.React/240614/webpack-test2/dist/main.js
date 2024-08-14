@@ -1,0 +1,1 @@
+(()=>{"use strict";const n=function(){var n=0;return{getCount:function(){return n},increment:function(){return++n}}}();var t=document.getElementById("count");t.innerHTML="".concat(n.getCount()),document.getElementById("count-btn").onclick=function(e){t.innerHTML=n.increment().toString()}})();

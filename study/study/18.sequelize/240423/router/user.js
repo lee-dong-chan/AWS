@@ -305,7 +305,7 @@ router.get("/info", async (req, res) => {
     await UserCrypto.findAll({
       attributes: [
         [sequelize.col("UserInfo.address"), "address"], //UserInfo.address AS address
-        [sequelize.fn("count", "id"), "address_cnt"], //COUNT(UserCrypto.id) AD adress_cnt
+        [sequelize.fn("count", "id"), "address_cnt"], //COUNT(UserCrypto.id) As adress_cnt
         [sequelize.fn("count", sequelize.col("UserInfo.address")), "name"], //COUNT(UserInfo.name) AD adress_cnt
         [sequelize.fn("count", "*"), "address2_cnt"], //COUNT(*) AD adress_cnt
       ],

@@ -82,6 +82,59 @@ sudo apt-get upgrade -y
 sudo apt-get install nginx
 ```
 
+## Node.js BackEnd 배포
+
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+
+source ~/.bashrc
+nvm install --lts
+node -v
+npm -v
+```
+
+# 파일 업로드
+
+```bash
+cd /var/www/
+ls -al
+total 12
+drwxr-xr-x  3 root root 4096 Jun  5 00:22 .
+drwxr-xr-x 14 root root 4096 Jun  5 00:22 ..
+drwxr-xr-x  2 root root 4096 Jun  5 00:22 html
+
+쓰기권한 없음
+```
+
+```bash
+#var/www
+sudo chmod 777 html -R
+ls -al
+
+total 12
+drwxr-xr-x  3 root root 4096 Jun  5 00:22 .
+drwxr-xr-x 14 root root 4096 Jun  5 00:22 ..
+drwxrwxrwx  2 root root 4096 Jun  5 00:22 html
+```
+
+## mysql 설치
+
+```bash
+sudo apt-get install mysql-server -y
+sudo mysql -u root -p #비번없이 엔터
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '1234qwer!@'
+
+#-- 관리자 비번설정
+CREATE USER 'thunder'@'localhost' IDENTIFIED WITH mysql_native_password BY '1234qwER!@'
+
+CREATE DATABASE thunder_market
+
+ GRANT ALL PRIVILEGES ON thunder_market.* TO 'thunder'@'localhost';
+
+
+```
+
 # NginX 세팅
 
 ```bash
@@ -185,4 +238,23 @@ sudo certbot --nginx
 
 ```bash
 Enter email address: 인증이 끝낫거나 뭔가 문제가 생겻을 때 연락받을 이메일
+```
+
+# 서버를 정식으로 배포하기 위해서 백엔드에서 실행
+
+- pm2 프레임워크를 사용
+
+```bash
+npm i pm2 -g
+npm list -g
+pm2 start server.js
+
+pm2 list # 백그라운드에서 실행중인 js 확인
+pm2 stop 0 # pm2 stop id
+pm2 restart 0 #pm2 restart id
+pm2 delete 0 # pm2 delete id
+```
+
+```
+ cd etc/nginx
 ```

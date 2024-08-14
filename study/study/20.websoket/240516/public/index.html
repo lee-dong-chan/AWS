@@ -1,0 +1,52 @@
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>socket</title>
+    <script src="http://localhost:8080/socket.io/socket.io.js"></script>
+  </head>
+
+  <body>
+    <div id="message"></div>
+    <form id="chat" action="">
+      <input type="text" name="room" placeholder="room">
+      <input type="text" name="name" placeholder="name">
+      <input type="text" name="chat" placeholder="chat">
+      <button class="btn btn-primary">보내기</button>
+    </form>
+    <script>
+      console.log(io);
+      const socket = io("ws://localhost:8080/chat"); // namespace
+      const msgElem = document.getElementById("message")
+
+      document.forms.chat.onsubmit = (e) => {
+        e.preventDefault();
+        if (e.target.chat.value) {
+          socket.emit("chat", {
+            room: e.target.room.value,
+            name: e.target.name.value || "no name",
+            chat: e.target.chat.value
+          });
+          e.target.chat.value = ""
+        }
+      }
+      socket.on("chat", (data) => {
+        console.log(data)
+        msgElem.innerHTML += `<li>${data.name}:${data.chat}</li>`
+        window.scrollTo(0, document.body.scrollHeight)
+      })
+    </script>
+    <style>
+      body {
+        margin: 0;
+      }
+
+      form {
+        position: sticky;
+        bottom: 0;
+      }
+    </style>
+  </body>
+
+</html>

@@ -1,0 +1,40 @@
+#header {
+  background-color: #3d414d;
+  height: 3.5rem;
+  color: white;
+}
+
+.top-menu {
+  font-size: 1.5rem;
+  height: 100%;
+}
+
+.channel-btn {
+  position: relative;
+}
+.channel-btn h4 {
+  margin: 0;
+  cursor: pointer;
+}
+
+.channel-btns {
+  width: 15rem;
+  position: absolute;
+  top: 4rem;
+  color: black;
+  padding: 0 1rem;
+  border: 1px solid gray;
+  margin: 0;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background-color: white;
+  display: none;
+}
+.channel-btns.on {
+  display: block;
+}
+
+.channel-btns li {
+  display: block;
+  margin: 0.5rem;
+}

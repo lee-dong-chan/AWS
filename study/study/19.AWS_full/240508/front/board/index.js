@@ -1,0 +1,227 @@
+const category = [
+  { name: "전체", img: "" },
+  {
+    name: "정보",
+    img: "",
+    categorys: [
+      { name: "OP.GG 기획", img: "" },
+      { name: "유저 뉴스", img: "" },
+      { name: "팁과 노하우", img: "" },
+      { name: "패치노트", img: "" },
+    ],
+  },
+  {
+    name: "커뮤니티",
+    img: "",
+    categorys: [
+      { name: "자유", img: "" },
+      { name: "유머", img: "" },
+      { name: "질문", img: "" },
+      { name: "영상", img: "" },
+      { name: "사건 사고", img: "" },
+      { name: "전적 인증", img: "" },
+      { name: "팬 아트", img: "" },
+    ],
+  },
+  {
+    name: "e스포츠",
+    img: "",
+    categorys: [
+      { name: "LCK", img: "" },
+      { name: "기타 리그", img: "" },
+    ],
+  },
+  {
+    name: "",
+    img: "",
+    categorys: [
+      { name: "유저 찾기", img: "" },
+      { name: "양성소", img: "" },
+      { name: "잡담소", img: "" },
+    ],
+  },
+];
+
+const comment = [
+  {
+    like: "0",
+    name: "후추뿌셔",
+    createAt: "38분전",
+    text: "디도스다",
+    recomment: [
+      { name: "오징어", createAt: "35분전", text: "먹물" },
+      { name: "삽겹살", createAt: "30분전", text: "2인분 주세요" },
+      { name: "감자튀김", createAt: "20분전", text: "맥도날드" },
+    ],
+  },
+];
+
+const cateElem = document.getElementById("category-list");
+
+category.forEach((cate1) => {
+  let str = "";
+  if (cate1.name && cate1.categorys) {
+    str += `<li>
+      <a href="#">
+        <h4>${cate1.name}<span>&gt</span></h4>
+      </a>
+      <ul>`;
+    cate1.categorys.forEach((cate2) => {
+      str += `<li>
+    <a href="#">
+      <span>${cate2.name}</span>
+    </a>
+  </li>`;
+    });
+    str += `</ul>
+  </li>`;
+  } else if (cate1.categorys) {
+    str += `<li><ul>`;
+    cate1.categorys.forEach((cate2) => {
+      str += `<li>
+      <a href="#">
+        <span>${cate2.name}</span>
+      </a>
+    </li>`;
+    });
+    str += `</ul></li>`;
+  } else {
+    str += `<li>
+    <a href="#"><h4>${cate1.name}</h4></a>
+  </li>`;
+  }
+  cateElem.innerHTML += str;
+});
+
+const boardListElem = document.getElementById("list");
+
+for (let i = 0; i < 40; i++) {
+  boardListElem.innerHTML += `<li>
+  <a href="">
+    <div>
+      <div class="like">
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="#7b858e"
+          xmlns="http://www.w3.org/2000/svg"
+          class="up css-1lmc62g ezhzapu0 animate"
+          data-type="default"
+        >
+          <path
+            d="M12.8215 10.4987L8.55564 4.31749C8.48688 4.21791 8.40159 4.13798 8.30561 4.08318C8.20963 4.02837 8.10524 4 7.9996 4C7.89396 4 7.78957 4.02837 7.69359 4.08318C7.59761 4.13798 7.51231 4.21791 7.44355 4.31749L3.17768 10.4987C2.77056 11.0887 3.1081 12 3.73373 12H12.2667C12.8923 12 13.2299 11.0887 12.8215 10.4987Z"
+          ></path>
+        </svg>
+        <span>123</span>
+      </div>
+      <div class="text">
+        <p class="title">
+          남자들 바지 주머니 특징
+          <span class="comment">[32]</span>
+        </p>
+        <p class="info">
+          <span>유머</span> | <span>9시간 전</span> |
+          <span>깡패토끼</span>
+        </p>
+      </div>
+      <img src="../imgs/bg_lol.jpg" alt="" />
+    </div>
+  </a>
+  </li>`;
+}
+
+const commentElem = document.getElementById("comment-list");
+
+if (comment) {
+  commentElem.innerHTML = "";
+}
+
+comment.forEach((comment1) => {
+  let str = "";
+  if (comment1.recomment) {
+    str += `<div class="comment1">
+  <div class="like">
+    <div>▲</div>
+    <span>${comment1.like}</span>
+    <div>▼</div>
+  </div>
+  <div class="content">
+    <p class="info">${comment1.name}<span> | ${comment1.createAt}</span></p>
+    <p class="text">${comment1.text}</p>
+    <p class="menu"><a href="./"><span>신고</span></a><a href="./"><span><img src="../imgs/comment-menu.png"><span><span>답글쓰기</span></a></p>
+  </div>
+</div>`;
+    comment1.recomment.forEach((comment2) => {
+      str += ` <div class="comment1">
+     <div class="empty"></div>
+      <div class="recomment">
+       <p>⎿</p>
+      </div>
+      <div class="content">
+        <p class="info">${comment2.name}<span> | ${comment2.createAt}</span></p>
+        <p class="text">${comment2.text}</p>
+        <p class="menu"><a href="./"><span>신고</span></a><a href="./"><span><span><img src="../imgs/comment-menu.png">답글쓰기</span></a></p>
+      </div>
+    </div>`;
+    });
+  }
+  commentElem.innerHTML += str;
+});
+
+const userInfoElem = document.getElementById("user-info");
+
+(async () => {
+  // const user = (
+  //   await axios({
+  //     method: "post",
+  //     url: "http://localhost:8000/user/info",
+  //     withCredentials: true,
+  //   })
+  // ).data;
+
+  const user = (
+    await axios.post(
+      "http://localhost:8000/user/info", //url
+      {}, //body
+      {
+        withCredentials: true, //option
+      }
+    )
+  ).data;
+
+  if (user.user) {
+    userInfoElem.innerHTML = `<div class="user-info">
+    <div>
+<div class="user">
+  <div>
+    <div><img src="../imgs/icon-level-1.png"></div>
+    <div class="info">
+      <div class="id">${user.user}</div>
+      <div class="level">레벨1</div>
+      <div class="exe"></div>
+      <div class="next">다음 레벨까지 11남음</div>
+    </div>
+  </div>
+</div>
+<div class="info-menu">
+  <div class="menu">
+    <div>
+      <a href="./"><span>내가 쓴 글</span></a>
+      <a href="./"><span>내가 쓴 댓글</span></a>
+    </div>
+    <div>
+      <a href="./"><span>내가 와드</span></a>
+      <a class="write" href="./write"><span>글쓰기</span></a>
+    </div>
+  </div>
+  <div class="game">
+    <a href="./">
+      <div>게임 계정 연결</div>
+    </a>
+  </div>
+  </div>
+</div>
+</div>`;
+  }
+})();

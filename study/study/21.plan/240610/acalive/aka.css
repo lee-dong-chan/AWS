@@ -1,0 +1,20 @@
+.body {
+  background-color: #eee;
+}
+
+.contents {
+  flex: 1;
+  background-color: white;
+  border-left: 1px solid lightgray;
+  border-right: 1px solid lightgray;
+  height: 100px;
+}
+
+.right-bar {
+  width: 20rem;
+  height: 100px;
+}
+
+.footer {
+  border-top: 1px solid lightgray;
+}

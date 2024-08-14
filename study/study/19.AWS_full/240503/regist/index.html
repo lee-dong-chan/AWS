@@ -39,7 +39,7 @@
       <div class="user-box">
         <h1>OP.GG 멤버ID를 생성하세요</h1>
         <p>모든 게이머들을 위한 OP.GG 멤버 커뮤니티에 오신것을 환영합니다.등록을 완료하고 모험을 시작하세요</p>
-        <form action="">
+        <form action="http" method="post">
           <fieldset>
             <legend>이메일 주소</legend>
             <input type="email" name="email" placeholder="이메일 주소" />
@@ -50,20 +50,23 @@
           </fieldset>
           <fieldset>
             <legend>비밀번호 확인</legend>
-            <input type="password" name="pw" placeholder="비밀번호" />
+            <input type="password" name="pw-check" placeholder="비밀번호" />
+          </fieldset>
+          <fieldset>
+            <legend>닉네임</legend>
+            <input type="text" name="nick" placeholder="닉네임" />
           </fieldset>
 
-
           <button class="login-btn">회원가입</button>
-
-
-
-          <p>이미 계정이 있으신가요?
-            <a href="./" class="regist">
-              로그인
-            </a>
-          </p>
         </form>
+
+
+        <p>이미 계정이 있으신가요?
+          <a href="./" class="regist">
+            로그인
+          </a>
+        </p>
+
       </div>
     </div>
     <div class="footer">

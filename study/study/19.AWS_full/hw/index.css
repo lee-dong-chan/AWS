@@ -108,15 +108,15 @@ a {
   border: none;
   border-radius: 0.5rem;
 }
-.board .body .left-bar .user-info {
-  padding: 0.5rem;
-  height: 17.5rem;
-}
+
 .board .body .left-bar .category-list {
   margin: 0;
   padding: 0;
 }
-
+.board .body .left-bar .user-info {
+  padding: 0.5rem;
+  height: 17.5rem;
+}
 .board .body .left-bar .user-info .user {
   height: 6rem;
 }

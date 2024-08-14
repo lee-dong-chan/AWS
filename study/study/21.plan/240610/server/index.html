@@ -1,0 +1,47 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>fltmxm</title>
+  </head>
+  <body>
+    <ul></ul>
+    <script>
+      class MyElement {
+        element;
+        constructor(parent, tag) {
+          this.element = document.createElement(tag);
+          parent.append(this.element);
+        }
+      }
+      class Item extends MyElement {
+        constructor(parent, text) {
+          super(parent, "li");
+          this.element.innerHTML = text;
+        }
+      }
+
+      class DivElement extends MyElement {
+        constructor(parent, text) {
+          super(parent, "div");
+          this.element.innerHTML = text;
+        }
+      }
+      const olELem = new MyElement(document.body, "ol");
+      new Item(olELem.element, "1");
+      new Item(olELem.element, "2");
+      new Item(olELem.element, "3");
+      new Item(olELem.element, "4");
+
+      const divElem = new DivElement(document.body, "hello?");
+      const divElem1 = new DivElement(divElem.element, "hello1");
+      const ulElem = document.getElementsByTagName("ul")[0];
+
+      new Item(ulElem, "1");
+      new Item(ulElem, "2");
+      new Item(ulElem, "3");
+      new Item(ulElem, "4");
+      new Item(ulElem, "5");
+    </script>
+  </body>
+</html>
