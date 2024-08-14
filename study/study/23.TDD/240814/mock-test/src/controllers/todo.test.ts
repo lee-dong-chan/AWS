@@ -14,6 +14,11 @@ describe("Test Todo", () => {
     app.use("/todo", router);
   });
 
+  test("test Mock", () => {
+    const mockFunk = jest.fn().mockReturnValue("hi?");
+    expect(mockFunk()).toBe("hi!");
+  });
+
   test("Test Add Todo Item", async () => {
     const response = await request(app)
       .post("/todo")
