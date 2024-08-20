@@ -113,7 +113,7 @@ flowchart TB
 ```bash
 sudo apt-get update
 sudo apt-get upgrade
-sudo apt-get install mysql-server -y
+ apt-get install mysql-server -y
 ```
 
 - mac의 terminal 에서
